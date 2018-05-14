@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../dist/js/ExcelSpirit.js"></script>
+</head>
+
+<body>
+    <input type="button" id="fileSelect1" value="ceshi"/>
+    <div id="demo"></div>
+</body>
+<script>
+    window.onload = function () {
+        /* var jsono = [{ //测试数据
+            "t_id":"20170921",
+            "t_title": "橙子",
+            "t_price": "20",
+            "t_date": "2017-09-21",
+        },{ //测试数据
+            "t_id":"20170922",
+            "t_title": "苹果",
+            "t_price": "30",
+            "t_date": "2017-09-20",
+        }];
+        var titlemap={
+            "t_id":"ID",
+            "t_title": "标题",
+            "t_price": "价格",
+            "t_date": "生产日期",
+        }
+        ExcelSpirit.json2excel(jsono,titlemap,"测试") */
+        //ExcelSpirit.json2excel(json[,titlemap][,filename])        
+        //ExcelSpirit.excel2json4ev(ev[,callback][,binary]) 基于一般事件的导入，
+        //ev事件对象；callback(由Excel组成的json)；binary是否已二进制方式读取文件，默认为true
+        var d=document.getElementById("fileSelect1")
+        d.addEventListener("click", function () {
+           ExcelSpirit.excel2obj4ev(function(json){
+            document.getElementById("demo").innerHTML=JSON.stringify(json);
+           });
+          }, false);
+    }
+</script>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../dist/js/ExcelSpirit.js"></script>
+    <style>
+        #container {
+            border: 1px solid #aaa;
+            padding: 10px;
+            margin: 10px;
+            width: 1050px;
+            min-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+     
+    </div>
+    <div id="demo"></div>
+</body>
+<script>
+    ExcelSpirit.excel2obj4drop("container",function(json){
+        document.getElementById("demo").innerHTML=JSON.stringify(json);
+    })
+</script>
+</html>
